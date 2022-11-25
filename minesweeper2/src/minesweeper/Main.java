@@ -1,4 +1,5 @@
-package minesweeper;
+package minesweeper3;
+
 
 import java.util.Random;
 import java.util.Scanner;
@@ -10,7 +11,12 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-//		 Minesweeper game = new Minesweeper(10,10);
+		System.out.println("-------->Minesweeper<--------");
+		System.out.println();
+		System.out.println("Enter a row and column between 0-9 to avoid the mines");
+		System.out.println();
+
+		 minesweeper game = new minesweeper(10,10);
 		
 		// 10 mines 10 x 10 grid
 		// enter row and column to check for mine
@@ -25,10 +31,16 @@ public class Main {
 		// How to connect input to displayedboard and reveal hiddengrid? 
 		// 
 		
-		System.out.println("Welcome to Minesweeper!");
-		System.out.println();
 		
-		displayBoard();
+		
+//		displayBoard();
+//		
+//		while(true) {
+//		game.userInput();
+//		}
+		
+		game.newGame();
+		
 		
 //		 int[][] visibleGrid = new int[10][10];
 //		 int[][] hiddenGrid =  new int[10][10];
@@ -47,15 +59,17 @@ public class Main {
 		 
 		for (int i = 0; i < visibleGrid.length; i++) {
             for (int j = 0; j < visibleGrid.length; j++) {
-                visibleGrid[i][j] = i+1;           //assign values to each array element
+                visibleGrid[i][j] = -1;           //assign values to each array element
                 System.out.print(visibleGrid[i][j] + " "); //print each element
             }
-            System.out.println();
+            System.out.println();  // printing line to separate them
 		
 	
 		}
 	
 	}
+	
+	
 	
 //	public static  void newGame() {
 //	generateMines();
